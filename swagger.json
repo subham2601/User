@@ -91,6 +91,105 @@
                     }
                 }
             }
+        },
+        "/admin/get-agents":{
+            "get":{
+                "summary":"get all agents",
+                "tags":[
+                    "Admin"
+                ],
+                "parameters":[
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "type":"string",
+                        "required":true
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok"
+                    }
+                }
+            }
+        },
+        "/agent/register":{
+            "post":{
+                "summary":"register a new agent",
+                "tags":[
+                    "Agent"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "object",
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "properties": {
+                                        "email": {
+                                            "type": "string",
+                                            "example": "agent@gmail.com"
+                                        },
+                                        "password": {
+                                            "type": "string",
+                                            "example": "12345"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "agent"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok"
+                    }
+                }
+            }
+        },
+        "/agent/login":{
+            "post":{
+                "summary":"api for agent login",
+                "tags":[
+                    "Agent"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "object",
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "properties": {
+                                        "email": {
+                                            "type": "string",
+                                            "example": "agent@gmail.com"
+                                        },
+                                        "password": {
+                                            "type": "string",
+                                            "example": "12345"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok"
+                    }
+                }
+            }
         }
 }
 }
