@@ -1,0 +1,96 @@
+{
+    "swagger":"2.0",
+    "info":{
+        "host":"http://localhost:8082",
+        "basePath":"/"
+    },
+    "schemes":[
+        "http"
+    ],
+    "consumes":[
+        "application/json"
+    ],
+    "produces":[
+        "application/json"
+    ],
+    "paths":{
+        "/admin/register":{
+            "post":{
+                "summary":"register a new admin",
+                "tags":[
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "object",
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "properties": {
+                                        "email": {
+                                            "type": "string",
+                                            "example": "admin@gmail.com"
+                                        },
+                                        "password": {
+                                            "type": "string",
+                                            "example": "12345"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "admin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok"
+                    }
+                }
+            }
+        },
+        "/admin/login":{
+            "post":{
+                "summary":"admin login",
+                "tags":[
+                    "Admin"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "object",
+                        "schema": {
+                            "properties": {
+                                "data": {
+                                    "properties": {
+                                        "email": {
+                                            "type": "string",
+                                            "example": "admin@gmail.com"
+                                        },
+                                        "password": {
+                                            "type": "string",
+                                            "example": "12345"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok"
+                    }
+                }
+            }
+        }
+}
+}
